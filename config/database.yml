@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: scribe
+  username: scribe
+  password: scribe
+  port: <%= ENV['DB_PORT']%>
+  host: <%= ENV['DB_HOST'] %>
+  min_messages: warning
+  pool: <%= Integer(ENV.fetch("DB_POOL", 5)) %>
+  reaping_frequency: <%= Integer(ENV.fetch("DB_REAPING_FREQUENCY", 10)) %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database:  scribe_development
+
+test:
+  <<: *default
+  database:  scribe_test
+
+production:
+  <<: *default
+  database: scribe
