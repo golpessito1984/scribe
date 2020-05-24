@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: "categories#index"
+  root to: "scribe#index"
   resources :categories, only: %i[index]
 end
