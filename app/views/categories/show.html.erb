@@ -1,5 +1,8 @@
 <h1>Show Category</h1>
 <div class="category">
-  <p><%= @category.title %></p>
-  <p><%= @category.description %></p>
+  <p><b>Title: </b><%= @category.title %></p>
+  <p><b>Description: </b><%= @category.description %></p>
+  <p><b>Parent Category: </b><%= @category.parent_title %></p>
 </div>
+</br>
+<%= link_to 'Categories', categories_path %>

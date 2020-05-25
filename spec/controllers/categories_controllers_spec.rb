@@ -42,7 +42,8 @@ RSpec.describe CategoriesController , type: :controller do
   describe 'Category POST #create' do
     it 'successfully' do
       category_params = { category: { title: 'Network',
-                                      description: 'Network Description'}}
+                                      description: 'Network Description',
+                                      parent_id: @category.id}}
       expect do
         post :create, params: category_params
       end.to change(Category, :count).by(1)
