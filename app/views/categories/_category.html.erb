@@ -3,7 +3,9 @@
   <td><%= category.description %></td>
   <td><%= category.parent_title %></td>
   <td>
-    <%= link_to 'Show', category_path(category) %>
-    <%= link_to 'Edit', edit_category_path(category) %>
+    <span id="<%= "category_#{category.id}" %>">
+      <%= link_to 'Show', category_path(category) %>
+      <%= link_to 'Edit', edit_category_path(category) %>
+    </span>
   </td>
 </tr>

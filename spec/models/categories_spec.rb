@@ -75,5 +75,13 @@ RSpec.describe Category, type: :model do
     it 'leaf has not children' do
       expect(@sub_category.has_children?).to eq(false)
     end
+
+    it 'destroy and all his children will be destroyed' do
+      sub_category_id = @sub_category.id
+      sub_category2_id = @sub_category2.id
+      @category.destroy
+      expect { Category.find(sub_category_id) }.to raise_error(ActiveRecord::RecordNotFound)
+      expect { Category.find(sub_category2_id) }.to raise_error(ActiveRecord::RecordNotFound)
+    end
   end
 end
