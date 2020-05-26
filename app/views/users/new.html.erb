@@ -1,13 +1,59 @@
-<%= form_for @user do |form| %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :surname %>
-  <%= form.text_field :surname %>
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-  <%= form.label :password_confirmation %>
-  <%= form.password_field :password_confirmation %>
-  <%= form.submit "Sign Up" %>
-<% end %>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+      <%= form_for @user do |form| %>
+					<span class="login100-form-title p-b-33">
+						New Account
+					</span>
+
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          <%= form.text_field :email, class: 'input100', placeholder: "Email" %>
+          <span class="focus-input100-1"></span>
+          <span class="focus-input100-2"></span>
+        </div>
+
+        <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+          <%= form.text_field :name, class: 'input100', placeholder: "Name" %>
+          <span class="focus-input100-1"></span>
+          <span class="focus-input100-2"></span>
+        </div>
+
+        <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+          <%= form.text_field :surname, class: 'input100', placeholder: "Surname" %>
+          <span class="focus-input100-1"></span>
+          <span class="focus-input100-2"></span>
+        </div>
+
+        <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+          <%= form.password_field :password, class: 'input100', placeholder: "Password" %>
+          <span class="focus-input100-1"></span>
+          <span class="focus-input100-2"></span>
+        </div>
+
+        <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+          <%= form.password_field :password_confirmation, class: 'input100',
+                                                          placeholder: "Password Confirmation" %>
+
+          <span class="focus-input100-1"></span>
+          <span class="focus-input100-2"></span>
+        </div>
+
+        <div class="container-login100-form-btn m-t-20">
+          <%= form.submit 'Sign up', class: "login100-form-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%#= form_for @user do |form| %>
+  <%#= form.label :name %>
+  <%#= form.text_field :name %>
+  <%#= form.label :surname %>
+  <%#= form.text_field :surname %>
+  <%#= form.label :password %>
+  <%#= form.password_field :password %>
+  <%#= form.label :password_confirmation %>
+  <%#= form.password_field :password_confirmation %>
+  <%#= form.submit "Sign Up" %>
+<%# end %>

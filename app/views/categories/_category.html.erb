@@ -1,7 +1,7 @@
 <tr>
+  <td><%= category.parent_title %></td>
   <td><%= category.title %></td>
   <td><%= category.description %></td>
-  <td><%= category.parent_title %></td>
   <td>
     <span id="<%= "category_#{category.id}" %>">
       <%= link_to 'Show', category_path(category) %>
