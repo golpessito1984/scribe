@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[show edit update]
+  before_action :authenticate
+  before_action :set_category, only: %i[show edit update destroy]
 
   def index
     @categories = Category.all
@@ -29,6 +30,14 @@ class CategoriesController < ApplicationController
       redirect_to @category, notice: 'Category updated successfully!'
     else
       render action: 'edit'
+    end
+  end
+
+  def destroy
+    if @category.destroy
+      redirect_to categories_path, notice: 'Category was destroyed successfully'
+    else
+      render action: 'index', alert: "Category #{category.name} can not be destroyed"
     end
   end
 
