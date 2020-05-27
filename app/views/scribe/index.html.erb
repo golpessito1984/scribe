@@ -1,3 +1,14 @@
-<h1>Scribe</h1>
+<div class="d-flex" id="wrapper">
+  <%= render "shared/sidebar_menu" %>
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <%= render "shared/menu" %>
+    <div class="container-fluid">
+      <h1 class="mt-4">Dashboard Scribe</h1>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
 
-<%= link_to 'Add a new category', new_category_path %>
+<!-- Menu Toggle Script-->
+<%#= javascript_pack_tag 'toggled' %>

@@ -1,8 +1,16 @@
-<h1>Show Category</h1>
-<div class="category">
-  <p><b>Title: </b><%= @category.title %></p>
-  <p><b>Description: </b><%= @category.description %></p>
-  <p><b>Parent Category: </b><%= @category.parent_title %></p>
+<div class="d-flex" id="wrapper">
+  <%= render "shared/sidebar_menu" %>
+  <div id="page-content-wrapper">
+    <%= render "shared/menu" %>
+    <div class="container-fluid category">
+      <h1 class="mt-4">Category <%= @category.title %></h1>
+        <p><b>Parent Category: </b><%= @category.parent_title %></p>
+        <p><b>Description: </b><%= @category.description %></p>
+        <p>
+          <b>Children: </b>
+          <%= render 'children', children: @category.children %>
+        </p>
+    </div>
+    <%= link_to 'List of Categories', categories_path, class: "btn btn-link" %>
+  </div>
 </div>
-</br>
-<%= link_to 'Categories', categories_path %>

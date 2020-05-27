@@ -1,0 +1,7 @@
+<% unless children.nil? %>
+  <ul>
+    <% children.each do |child| %>
+      <li><%= child.title %></li>
+    <% end %>
+  </ul>
+<% end %>
